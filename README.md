@@ -16,13 +16,17 @@ npm run build
 
 ## GitHub Pages
 
-Le site peut être exporté en version statique dans `docs/`, compatible avec GitHub Pages:
+La version publique GitHub Pages est servie par la branche `gh-pages`:
+
+https://alexandre2102.github.io/cobeq/
+
+Le site peut être exporté en version statique dans `docs/`:
 
 ```bash
 npm run export:github-pages
 ```
 
-Une action GitHub est incluse dans `.github/workflows/pages.yml` pour publier automatiquement la version statique sur GitHub Pages à chaque modification de la branche `main`.
+Pour republier sur GitHub Pages, il faut mettre le contenu de `docs/` à la racine de la branche `gh-pages`.
 
 ## Commandes utiles
 
