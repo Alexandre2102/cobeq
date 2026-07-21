@@ -4,6 +4,7 @@ import test from "node:test";
 
 test("exports a static GitHub Pages build", async () => {
   const html = await readFile(new URL("../docs/index.html", import.meta.url), "utf8");
+  const cname = await readFile(new URL("../docs/CNAME", import.meta.url), "utf8");
 
   assert.match(html, /<title>PMC COBEQ \| Projet majeur de conception en génie<\/title>/);
   assert.match(html, /Module robotisé de cueillette de fraises/);
@@ -16,4 +17,5 @@ test("exports a static GitHub Pages build", async () => {
   assert.doesNotMatch(html, /src="\//);
   assert.doesNotMatch(html, /<script\b/i);
   assert.doesNotMatch(html, /modulepreload/);
+  assert.equal(cname.trim(), "cobeq.ca");
 });

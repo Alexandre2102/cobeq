@@ -54,5 +54,6 @@ await cp(publicDir, outputDir, { recursive: true });
 await writeFile(join(outputDir, "index.html"), html, "utf8");
 await writeFile(join(outputDir, "404.html"), html, "utf8");
 await writeFile(join(outputDir, ".nojekyll"), "", "utf8");
+await writeFile(join(outputDir, "CNAME"), "cobeq.ca\n", "utf8");
 
 console.log(`GitHub Pages export written to ${outputDir}`);
