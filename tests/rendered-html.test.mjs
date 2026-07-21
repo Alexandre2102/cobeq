@@ -92,8 +92,11 @@ test("keeps support guide details in hover and focus tooltips", async () => {
   assert.doesNotMatch(css, /right:\s*clamp\(-150px/);
   assert.doesNotMatch(css, /left:\s*clamp\(-150px/);
   assert.match(css, /grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/);
-  assert.match(css, /flex-wrap:\s*nowrap/);
-  assert.match(css, /scrollbar-width:\s*none/);
-  assert.match(css, /width:\s*min\(132px,\s*45vw\)/);
-  assert.match(css, /\.nav-links \.nav-instagram \{[\s\S]*?width:\s*30px/);  assert.match(css, /overflow-wrap:\s*anywhere/);
+  assert.match(css, /grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/);
+  assert.match(css, /overflow:\s*visible/);
+  assert.match(css, /text-overflow:\s*ellipsis/);
+  assert.match(css, /font-size:\s*0\.68rem/);
+  assert.match(css, /overflow-wrap:\s*anywhere/);
+  assert.doesNotMatch(css, /overflow-x:\s*auto/);
+  assert.doesNotMatch(css, /scrollbar-width:\s*none/);
 });
