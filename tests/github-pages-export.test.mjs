@@ -13,8 +13,9 @@ test("exports a static GitHub Pages build", async () => {
   assert.match(html, /href="\.\/brand\/logo\.png"/);
   assert.match(html, /src="\.\/brand\/instagram-couleur\.png"/);
   assert.match(html, /url\(\.\/culture\/terrain-hero-serre\.jpeg\)/);
-  assert.match(html, /src="\.\/culture\/terrain-rangs-sous-tunnel\.jpeg"/);
-  assert.match(html, /src="\.\/culture\/terrain-fruits-suspendus\.jpeg"/);
+  assert.match(html, /src="\.\/culture\/gouttiere-industrie-rangs\.png"/);
+  assert.match(html, /src="\.\/culture\/gouttiere-industrie-suspendue\.png"/);
+  assert.match(html, /src="\.\/culture\/serre-fraises-suspendues\.png"/);
   assert.match(html, /src="\.\/culture\/terrain-detail-pedoncule\.jpeg"/);
   assert.match(html, /src="\.\/culture\/terrain-fruits-groupe\.jpeg"/);
   assert.doesNotMatch(html, /href="\//);

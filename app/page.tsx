@@ -64,7 +64,7 @@ const culturePoints = [
 
 const cultureImages = [
   {
-    src: "/culture/terrain-hero-serre.jpeg",
+    src: "/culture/gouttiere-industrie-suspendue.png",
     title: "Gouttière suspendue",
     alt: "Gouttière suspendue de fraises en production en serre",
   },
@@ -74,7 +74,7 @@ const cultureImages = [
     alt: "Fraise mûre suspendue sous le feuillage avec pédoncule visible",
   },
   {
-    src: "/culture/terrain-fruits-suspendus.jpeg",
+    src: "/culture/serre-fraises-suspendues.png",
     title: "Serre",
     alt: "Fraises suspendues en serre dans des rangs de production hors-sol",
   },
@@ -333,7 +333,7 @@ export default function Home() {
             </ul>
           </div>
           <figure className="culture-feature">
-            <img src="/culture/terrain-rangs-sous-tunnel.jpeg" alt="Gouttières hors-sol de fraises utilisées en production en serre" />
+            <img src="/culture/gouttiere-industrie-rangs.png" alt="Gouttières hors-sol de fraises utilisées en production en serre" />
             <figcaption>Gouttières industrielles: l’environnement que le module cherche à servir.</figcaption>
           </figure>
         </div>

@@ -50,12 +50,12 @@ test("server-renders the COBEQ site", async () => {
   assert.match(html, /Serre/);
   assert.match(html, /Hors-sol sous tunnel/);
   assert.match(html, /Gouttières industrielles/);
-  assert.match(html, /\/culture\/terrain-rangs-sous-tunnel\.jpeg/);
-  assert.match(html, /\/culture\/terrain-hero-serre\.jpeg/);
-  assert.match(html, /\/culture\/terrain-fruits-suspendus\.jpeg/);
+  assert.match(html, /\/culture\/gouttiere-industrie-rangs\.png/);
+  assert.match(html, /\/culture\/gouttiere-industrie-suspendue\.png/);
+  assert.match(html, /\/culture\/serre-fraises-suspendues\.png/);
   assert.match(html, /\/culture\/terrain-detail-pedoncule\.jpeg/);
   assert.match(html, /\/culture\/terrain-fruits-groupe\.jpeg/);
-  assert.doesNotMatch(html, /\/culture\/(?:serre-fraises-suspendues|hors-sol-sous-tunnel|gouttiere-industrie-rangs|gouttiere-industrie-suspendue)\.(?:png|jpg)/);
+  assert.doesNotMatch(html, /\/culture\/(?:hors-sol-sous-tunnel)\.(?:png|jpg)/);
   assert.ok((html.match(/En attente d(?:'|&#x27;)une photo/g) ?? []).length >= 2);
   assert.doesNotMatch(html, /\/team\/gabriel-caron\.png/);
   assert.doesNotMatch(html, /\/team\/marc-aurele-menard\.png/);
