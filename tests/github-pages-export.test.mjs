@@ -13,6 +13,10 @@ test("exports a static GitHub Pages build", async () => {
   assert.match(html, /href="\.\/brand\/logo\.png"/);
   assert.match(html, /src="\.\/brand\/instagram-couleur\.png"/);
   assert.match(html, /url\(\.\/culture\/serre-rangs-suspendus\.jpg\)/);
+  assert.match(html, /src="\.\/culture\/terrain-rangs-sous-tunnel\.jpeg"/);
+  assert.match(html, /src="\.\/culture\/terrain-fruits-suspendus\.jpeg"/);
+  assert.match(html, /src="\.\/culture\/terrain-detail-pedoncule\.jpeg"/);
+  assert.match(html, /Photos prises lors d\u2019une visite terrain, juillet 2026/);
   assert.doesNotMatch(html, /href="\//);
   assert.doesNotMatch(html, /src="\//);
   assert.doesNotMatch(html, /<script\b/i);

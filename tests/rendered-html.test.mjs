@@ -45,9 +45,11 @@ test("server-renders the COBEQ site", async () => {
   assert.doesNotMatch(html, />Suivre COBEQ sur Instagram</);
   assert.doesNotMatch(html, />Instagram @cobeq\.ca</);
   assert.doesNotMatch(html, />@cobeq\.ca</);
-  assert.match(html, /Hors-sol sous tunnel/);
-  assert.match(html, /\/culture\/serre-fraises-suspendues\.png/);
-  assert.match(html, /\/culture\/hors-sol-sous-tunnel\.png/);
+  assert.match(html, /Rangs sous tunnel/);
+  assert.match(html, /\/culture\/terrain-rangs-sous-tunnel\.jpeg/);
+  assert.match(html, /\/culture\/terrain-fruits-suspendus\.jpeg/);
+  assert.match(html, /\/culture\/terrain-detail-pedoncule\.jpeg/);
+  assert.match(html, /Photos prises lors d\u2019une visite terrain, juillet 2026/);
   assert.ok((html.match(/En attente d(?:'|&#x27;)une photo/g) ?? []).length >= 2);
   assert.doesNotMatch(html, /\/team\/gabriel-caron\.png/);
   assert.doesNotMatch(html, /\/team\/marc-aurele-menard\.png/);
@@ -80,6 +82,8 @@ test("keeps support guide details in hover and focus tooltips", async () => {
   assert.match(css, /\.portrait-placeholder/);
   assert.match(css, /\.portrait-initials/);
   assert.match(css, /\.support-tooltip/);
+  assert.match(css, /\.culture-photo-note/);
+  assert.match(css, /grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/);
   assert.match(css, /\.support-info-button sup/);
   assert.match(css, /\.support-info:hover \.support-tooltip/);
   assert.match(css, /\.support-info:focus-within \.support-tooltip/);
