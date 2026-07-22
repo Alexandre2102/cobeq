@@ -333,7 +333,7 @@ export default function Home() {
             </ul>
           </div>
           <figure className="culture-feature">
-            <img src="/culture/gouttiere-industrie-rangs.png" alt="Gouttières hors-sol de fraises utilisées en production en serre" />
+            <img src="/culture/terrain-hero-serre.jpeg" alt="Gouttières hors-sol de fraises utilisées en production en serre" />
             <figcaption>Gouttières industrielles: l’environnement que le module cherche à servir.</figcaption>
           </figure>
         </div>

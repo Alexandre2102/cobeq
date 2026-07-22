@@ -50,7 +50,7 @@ test("server-renders the COBEQ site", async () => {
   assert.match(html, /Serre/);
   assert.match(html, /Hors-sol sous tunnel/);
   assert.match(html, /Gouttières industrielles/);
-  assert.match(html, /\/culture\/gouttiere-industrie-rangs\.png/);
+  assert.match(html, /\/culture\/terrain-hero-serre\.jpeg/);
   assert.match(html, /\/culture\/gouttiere-industrie-suspendue\.png/);
   assert.match(html, /\/culture\/serre-fraises-suspendues\.png/);
   assert.match(html, /\/culture\/terrain-detail-pedoncule\.jpeg/);
@@ -95,9 +95,10 @@ test("keeps support guide details in hover and focus tooltips", async () => {
   assert.match(css, /\.support-need-list/);
   assert.match(css, /terrain-fleur-fraise\.jpeg/);
   assert.match(css, /terrain-rangs-sous-tunnel\.jpeg/);
+  assert.match(css, /serre-rangs-suspendus\.jpg/);
   assert.match(css, /terrain-hero-serre\.jpeg/);
   assert.match(css, /terrain-detail-pedoncule\.jpeg/);
-  assert.doesNotMatch(css, /(?:serre-rangs-suspendus|rang-hors-sol-detail|tunnel-hors-sol|tunnel-rendement|fraise-proche-pedoncule)\.(?:jpg|png)/);
+  assert.doesNotMatch(css, /(?:rang-hors-sol-detail|tunnel-hors-sol|tunnel-rendement|fraise-proche-pedoncule)\.(?:jpg|png)/);
   assert.match(css, /\/brand\/logo\.png/);
   assert.match(css, /\.objective-band::after/);
   assert.match(css, /\.event-band::after/);

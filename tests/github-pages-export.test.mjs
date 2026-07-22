@@ -12,8 +12,9 @@ test("exports a static GitHub Pages build", async () => {
   assert.match(html, /https:\/\/www\.instagram\.com\/cobeq\.ca\//);
   assert.match(html, /href="\.\/brand\/logo\.png"/);
   assert.match(html, /src="\.\/brand\/instagram-couleur\.png"/);
+  assert.match(html, /url\(\.\/culture\/serre-rangs-suspendus\.jpg\)/);
   assert.match(html, /url\(\.\/culture\/terrain-hero-serre\.jpeg\)/);
-  assert.match(html, /src="\.\/culture\/gouttiere-industrie-rangs\.png"/);
+  assert.match(html, /src="\.\/culture\/terrain-hero-serre\.jpeg"/);
   assert.match(html, /src="\.\/culture\/gouttiere-industrie-suspendue\.png"/);
   assert.match(html, /src="\.\/culture\/serre-fraises-suspendues\.png"/);
   assert.match(html, /src="\.\/culture\/terrain-detail-pedoncule\.jpeg"/);
