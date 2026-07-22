@@ -231,7 +231,7 @@ export default function Home() {
           <a href="#demarche">Démarche</a>
           <a href="#equipe">Équipe</a>
           <a href="#contribuer">Contribuer</a>
-          <a href="#megageniale">MégaGÉNIALE</a>
+          <a href="#megageniale">Méga GÉNIALE</a>
           <a className="nav-instagram instagram-icon-link" href="https://www.instagram.com/cobeq.ca/" target="_blank" rel="noreferrer" aria-label="Instagram COBEQ">
             <img src="/brand/instagram-couleur.png" alt="" />
           </a>
