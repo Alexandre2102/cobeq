@@ -108,7 +108,17 @@ const timeline = [
   },
 ];
 
-const teamMembers = [
+type TeamMember = {
+  name: string;
+  program: string;
+  accentKey: "green" | "mechanical";
+  image?: string;
+  position?: string;
+  initials?: string;
+  photoStatus?: string;
+};
+
+const teamMembers: TeamMember[] = [
   {
     name: "Alexandre Tanguay",
     program: "Génie robotique",
@@ -127,8 +137,8 @@ const teamMembers = [
     name: "Gabriel Caron",
     program: "Génie mécanique",
     accentKey: "mechanical",
-    image: "/team/gabriel-caron.png",
-    position: "center 42%",
+    initials: "GC",
+    photoStatus: "En attente d'une photo",
   },
   {
     name: "Émile LeBlanc",
@@ -141,8 +151,8 @@ const teamMembers = [
     name: "Marc-Aurèle Ménard",
     program: "Génie électrique",
     accentKey: "green",
-    image: "/team/marc-aurele-menard.png",
-    position: "center 42%",
+    initials: "MM",
+    photoStatus: "En attente d'une photo",
   },
   {
     name: "El Souleymane Bah",
@@ -434,8 +444,15 @@ export default function Home() {
         <div className="team-grid">
           {teamMembers.map((member) => (
             <article className={`team-card ${member.accentKey}`} key={member.name}>
-              <div className="portrait-frame">
-                <img src={member.image} alt={`Portrait de ${member.name}`} style={{ objectPosition: member.position }} />
+              <div className={`portrait-frame ${member.image ? "" : "portrait-frame-pending"}`}>
+                {member.image ? (
+                  <img src={member.image} alt={`Portrait de ${member.name}`} style={{ objectPosition: member.position ?? "center" }} />
+                ) : (
+                  <div className="portrait-placeholder" aria-label={`Photo de ${member.name} en attente`}>
+                    <span className="portrait-initials">{member.initials}</span>
+                    <span className="portrait-status">{member.photoStatus}</span>
+                  </div>
+                )}
               </div>
               <div className="member-info">
                 <h3>{member.name}</h3>
