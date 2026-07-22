@@ -104,6 +104,7 @@ test("keeps support guide details in hover and focus tooltips", async () => {
   assert.match(css, /justify-content:\s*flex-start/);
   assert.match(css, /display:\s*inline/);
   assert.match(css, /right:\s*-72px/);
+  assert.match(css, /top:\s*52%/);
   assert.match(css, /width:\s*min\(330px,\s*78vw\)/);
   assert.match(css, /opacity:\s*0\.5/);
   assert.match(css, /font-size:\s*0\.64rem/);
