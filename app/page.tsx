@@ -64,14 +64,24 @@ const culturePoints = [
 
 const cultureImages = [
   {
-    src: "/culture/terrain-fruits-suspendus.jpeg",
-    title: "Fruits suspendus",
-    alt: "Fraises suspendues sous le feuillage lors d’une visite terrain",
+    src: "/culture/gouttiere-industrie-suspendue.png",
+    title: "Gouttière suspendue",
+    alt: "Gouttière suspendue de fraises en production en serre",
   },
   {
-    src: "/culture/terrain-detail-pedoncule.jpeg",
-    title: "Détail fruit/pédoncule",
-    alt: "Détail d’une fraise et de son pédoncule lors d’une visite terrain",
+    src: "/culture/fraise-proche-pedoncule.jpg",
+    title: "Fruit fragile",
+    alt: "Fraise mûre suspendue sous le feuillage avec pédoncule visible",
+  },
+  {
+    src: "/culture/serre-fraises-suspendues.png",
+    title: "Serre",
+    alt: "Fraises suspendues en serre dans des rangs de production hors-sol",
+  },
+  {
+    src: "/culture/hors-sol-sous-tunnel.png",
+    title: "Hors-sol sous tunnel",
+    alt: "Culture de fraises hors-sol sous tunnel avec fruits suspendus",
   },
 ];
 
@@ -323,8 +333,8 @@ export default function Home() {
             </ul>
           </div>
           <figure className="culture-feature">
-            <img src="/culture/terrain-rangs-sous-tunnel.jpeg" alt="Rangs de fraises hors-sol sous tunnel lors d’une visite terrain" />
-            <figcaption>Rangs sous tunnel: l’environnement que le module cherche à servir.</figcaption>
+            <img src="/culture/gouttiere-industrie-rangs.png" alt="Gouttières hors-sol de fraises utilisées en production en serre" />
+            <figcaption>Gouttières industrielles: l’environnement que le module cherche à servir.</figcaption>
           </figure>
         </div>
         <div className="culture-gallery" aria-label="Exemples visuels de la culture ciblée">
@@ -335,7 +345,6 @@ export default function Home() {
             </figure>
           ))}
         </div>
-        <p className="culture-photo-note">Photos prises lors d’une visite terrain, juillet 2026.</p>
       </section>
 
       <section className="content-band objective-band" id="objectifs" aria-label="Objectifs du projet COBEQ">
