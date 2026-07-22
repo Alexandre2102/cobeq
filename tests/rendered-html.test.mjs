@@ -100,7 +100,12 @@ test("keeps support guide details in hover and focus tooltips", async () => {
   assert.match(css, /grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/);
   assert.match(css, /grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/);
   assert.match(css, /overflow:\s*visible/);
-  assert.match(css, /width:\s*min\(188px,\s*62vw\)/);
+  assert.match(css, /width:\s*min\(140px,\s*44vw\)/);
+  assert.match(css, /justify-content:\s*flex-start/);
+  assert.match(css, /display:\s*inline/);
+  assert.match(css, /right:\s*-72px/);
+  assert.match(css, /width:\s*min\(330px,\s*78vw\)/);
+  assert.match(css, /opacity:\s*0\.5/);
   assert.match(css, /font-size:\s*0\.64rem/);
   assert.match(css, /white-space:\s*normal/);
   assert.match(css, /overflow-wrap:\s*anywhere/);

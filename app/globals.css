@@ -2148,16 +2148,17 @@ h1 {
 
   .brand-link {
     width: 100%;
-    justify-content: center;
-    gap: 0;
+    justify-content: flex-start;
+    gap: 8px;
   }
 
   .brand-wordmark {
-    width: min(188px, 62vw);
+    width: min(140px, 44vw);
   }
 
   .brand-link span {
-    display: none;
+    display: inline;
+    font-size: 0.74rem;
   }
 
   .nav-links {
@@ -2198,10 +2199,14 @@ h1 {
   }
 
   .hero-symbol-panel {
-    right: -180px;
-    top: 58%;
-    width: 390px;
-    opacity: 0.42;
+    right: -72px;
+    top: 64%;
+    width: min(330px, 78vw);
+    opacity: 1;
+  }
+
+  .hero-symbol {
+    opacity: 0.5;
   }
 
   .hero-wordmark {
