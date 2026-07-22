@@ -45,7 +45,11 @@ test("server-renders the COBEQ site", async () => {
   assert.doesNotMatch(html, />Suivre COBEQ sur Instagram</);
   assert.doesNotMatch(html, />Instagram @cobeq\.ca</);
   assert.doesNotMatch(html, />@cobeq\.ca</);
-  assert.match(html, /Rangs sous tunnel/);
+  assert.match(html, /Gouttière suspendue/);
+  assert.match(html, /Fruit fragile/);
+  assert.match(html, /Serre/);
+  assert.match(html, /Hors-sol sous tunnel/);
+  assert.match(html, /Gouttières industrielles/);
   assert.match(html, /\/culture\/terrain-rangs-sous-tunnel\.jpeg/);
   assert.match(html, /\/culture\/terrain-hero-serre\.jpeg/);
   assert.match(html, /\/culture\/terrain-fruits-suspendus\.jpeg/);

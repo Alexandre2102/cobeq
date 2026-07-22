@@ -65,23 +65,23 @@ const culturePoints = [
 const cultureImages = [
   {
     src: "/culture/terrain-hero-serre.jpeg",
-    title: "Rangs sous tunnel",
-    alt: "Rangs de fraises hors-sol sous tunnel lors d’une visite terrain",
-  },
-  {
-    src: "/culture/terrain-fruits-suspendus.jpeg",
-    title: "Fruits suspendus",
-    alt: "Fraises suspendues sous le feuillage lors d’une visite terrain",
+    title: "Gouttière suspendue",
+    alt: "Gouttière suspendue de fraises en production en serre",
   },
   {
     src: "/culture/terrain-detail-pedoncule.jpeg",
-    title: "Détail fruit/pédoncule",
-    alt: "Détail d’une fraise et de son pédoncule lors d’une visite terrain",
+    title: "Fruit fragile",
+    alt: "Fraise mûre suspendue sous le feuillage avec pédoncule visible",
+  },
+  {
+    src: "/culture/terrain-fruits-suspendus.jpeg",
+    title: "Serre",
+    alt: "Fraises suspendues en serre dans des rangs de production hors-sol",
   },
   {
     src: "/culture/terrain-fruits-groupe.jpeg",
-    title: "Fruits à maturité variable",
-    alt: "Groupe de fraises à maturité variable lors d’une visite terrain",
+    title: "Hors-sol sous tunnel",
+    alt: "Culture de fraises hors-sol sous tunnel avec fruits suspendus",
   },
 ];
 
@@ -333,8 +333,8 @@ export default function Home() {
             </ul>
           </div>
           <figure className="culture-feature">
-            <img src="/culture/terrain-rangs-sous-tunnel.jpeg" alt="Rangs de fraises hors-sol sous tunnel lors d’une visite terrain" />
-            <figcaption>Rangs sous tunnel: l’environnement que le module cherche à servir.</figcaption>
+            <img src="/culture/terrain-rangs-sous-tunnel.jpeg" alt="Gouttières hors-sol de fraises utilisées en production en serre" />
+            <figcaption>Gouttières industrielles: l’environnement que le module cherche à servir.</figcaption>
           </figure>
         </div>
         <div className="culture-gallery" aria-label="Exemples visuels de la culture ciblée">
