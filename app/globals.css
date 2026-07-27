@@ -2432,3 +2432,61 @@ html[data-lang="en"] .support-card:nth-child(2)::before {
     padding-inline: 6px;
   }
 }
+
+@media (min-width: 921px) and (max-width: 1180px) {
+  .topbar {
+    gap: 14px;
+    padding-inline: clamp(16px, 2.4vw, 32px);
+  }
+
+  .brand-cluster {
+    flex: 0 0 auto;
+    gap: 10px;
+  }
+
+  .brand-link {
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  .brand-wordmark {
+    width: clamp(118px, 12vw, 160px);
+  }
+
+  .language-toggle {
+    min-width: 76px;
+    min-height: 34px;
+    padding: 3px;
+    font-size: 0.7rem;
+  }
+
+  .language-choice {
+    min-height: 26px;
+    padding-inline: 6px;
+  }
+
+  .nav-links {
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    min-width: 0;
+    gap: clamp(8px, 1.25vw, 16px);
+    font-size: clamp(0.74rem, 1.15vw, 0.9rem);
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+  }
+
+  .nav-links .nav-instagram {
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    min-height: 34px;
+    padding: 4px;
+  }
+
+  .nav-links .nav-instagram img {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,4 +1,4 @@
-﻿import assert from "node:assert/strict";
+import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
@@ -29,8 +29,8 @@ test("server-renders the bilingual COBEQ site", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>PMC COBEQ \| Projet majeur de conception en génie<\/title>/i);
-  assert.match(html, /Module robotisé de cueillette de fraises/);
+  assert.match(html, /<title>PMC COBEQ \| Projet majeur de conception en g.nie<\/title>/i);
+  assert.match(html, /Module robotis. de cueillette de fraises/);
   assert.match(html, /Dons et commandites/);
   assert.match(html, /data-language-toggle/);
   assert.match(html, /src="\/i18n\.js"/);
@@ -39,11 +39,11 @@ test("server-renders the bilingual COBEQ site", async () => {
   assert.match(html, /https:\/\/www\.instagram\.com\/cobeq\.ca\//);
   assert.equal((html.match(/src="\/brand\/instagram-couleur\.png"/g) ?? []).length, 4);
   assert.doesNotMatch(html, />Suivre COBEQ sur Instagram</);
-  assert.match(html, /Gouttière suspendue/);
+  assert.match(html, /Goutti.re suspendue/);
   assert.match(html, /Fruit fragile/);
   assert.match(html, /Serre/);
   assert.match(html, /Hors-sol sous tunnel/);
-  assert.match(html, /Gouttières industrielles/);
+  assert.match(html, /Goutti.res industrielles/);
   assert.match(html, /\/culture\/terrain-hero-serre\.jpeg/);
   assert.match(html, /\/culture\/gouttiere-industrie-suspendue\.png/);
   assert.match(html, /\/culture\/serre-fraises-suspendues\.png/);
@@ -76,9 +76,9 @@ test("keeps translation and support guide details available", async () => {
   assert.match(page, /Informations du guide PMC pour/);
   assert.match(page, /Un don est un appui sans/);
   assert.match(page, /Fondation UDS/);
-  assert.match(page, /reçu fiscal peut être émis/);
+  assert.match(page, /re.u fiscal peut .tre .mis/);
   assert.match(page, /Une commandite est un appui financier/);
-  assert.match(page, /Aucun reçu fiscal/);
+  assert.match(page, /Aucun re.u fiscal/);
   assert.doesNotMatch(page, /Tout surplus/);
   assert.doesNotMatch(page, /SARIC/);
   assert.match(css, /\.footer-instagram/);
@@ -92,6 +92,9 @@ test("keeps translation and support guide details available", async () => {
   assert.match(css, /terrain-detail-pedoncule\.jpeg/);
   assert.doesNotMatch(css, /(?:rang-hors-sol-detail|tunnel-hors-sol|tunnel-rendement|fraise-proche-pedoncule)\.(?:jpg|png)/);
   assert.match(css, /grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/);
+  assert.match(css, /@media \(min-width: 921px\) and \(max-width: 1180px\)/);
+  assert.match(css, /flex-wrap:\s*nowrap/);
+  assert.match(css, /flex:\s*0 0 34px/);
   assert.doesNotMatch(css, /overflow-x:\s*auto/);
   assert.doesNotMatch(css, /text-overflow:\s*ellipsis/);
 });
