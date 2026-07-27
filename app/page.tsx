@@ -230,10 +230,16 @@ export default function Home() {
   return (
     <main className="page-shell">
       <header className="topbar" aria-label="Navigation principale">
-        <a className="brand-link" href="#accueil" aria-label="Retour à l’accueil PMC COBEQ">
+        <div className="brand-cluster">
+          <a className="brand-link" href="#accueil" aria-label="Retour à l’accueil PMC COBEQ">
           <img src="/brand/nom.png" alt="COBEQ" className="brand-wordmark" />
           <span>PMC en génie</span>
-        </a>
+          </a>
+          <button className="language-toggle" type="button" data-language-toggle aria-label="Traduire le site en anglais" aria-pressed="false">
+            <span className="language-choice language-choice-fr">FR</span>
+            <span className="language-choice language-choice-en">EN</span>
+          </button>
+        </div>
         <nav className="nav-links" aria-label="Sections du site">
           <a href="#projet">Projet</a>
           <a href="#objectifs">Objectifs</a>
@@ -602,6 +608,7 @@ export default function Home() {
           <a href="#accueil" aria-label="Retour en haut de page">Haut de page</a>
         </div>
       </footer>
+      <script src="/i18n.js" defer></script>
     </main>
   );
 }

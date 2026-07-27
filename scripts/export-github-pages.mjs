@@ -48,6 +48,8 @@ html = html
   .replaceAll('src="/', 'src="./')
   .replaceAll('content="/', 'content="./');
 
+html = html.replace("</body>", '<script src="./i18n.js" defer></script></body>');
+
 await rm(outputDir, { recursive: true, force: true });
 await mkdir(outputDir, { recursive: true });
 await cp(publicDir, outputDir, { recursive: true });

@@ -1,14 +1,20 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-test("exports a static GitHub Pages build", async () => {
+test("exports a static bilingual GitHub Pages build", async () => {
   const html = await readFile(new URL("../docs/index.html", import.meta.url), "utf8");
+  const i18n = await readFile(new URL("../docs/i18n.js", import.meta.url), "utf8");
   const cname = await readFile(new URL("../docs/CNAME", import.meta.url), "utf8");
 
   assert.match(html, /<title>PMC COBEQ \| Projet majeur de conception en génie<\/title>/);
   assert.match(html, /Module robotisé de cueillette de fraises/);
   assert.match(html, /Dons et commandites/);
+  assert.match(html, /data-language-toggle/);
+  assert.match(html, /src="\.\/i18n\.js" defer/);
+  assert.match(i18n, /Robotic strawberry harvesting module/);
+  assert.match(i18n, /Support COBEQ/);
+  assert.match(i18n, /Become a sponsor/);
   assert.match(html, /https:\/\/www\.instagram\.com\/cobeq\.ca\//);
   assert.match(html, /href="\.\/brand\/logo\.png"/);
   assert.match(html, /href="\.\/brand\/favicon\.png"/);
@@ -22,7 +28,6 @@ test("exports a static GitHub Pages build", async () => {
   assert.match(html, /src="\.\/culture\/terrain-fruits-groupe\.jpeg"/);
   assert.doesNotMatch(html, /href="\//);
   assert.doesNotMatch(html, /src="\//);
-  assert.doesNotMatch(html, /<script\b/i);
   assert.doesNotMatch(html, /modulepreload/);
   assert.equal(cname.trim(), "cobeq.ca");
 });

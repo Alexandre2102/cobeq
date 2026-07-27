@@ -2338,3 +2338,97 @@ h1 {
     margin-left: 0;
   }
 }
+
+.brand-cluster {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.language-toggle {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 3px;
+  min-width: 82px;
+  min-height: 38px;
+  padding: 4px;
+  border: 1px solid rgba(0, 107, 57, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--green-dark);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(23, 33, 27, 0.08);
+}
+
+.language-choice {
+  display: grid;
+  place-items: center;
+  min-height: 28px;
+  padding: 0 8px;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+.language-choice-fr {
+  background: var(--green);
+  color: #ffffff;
+}
+
+.language-choice-en {
+  color: var(--muted);
+}
+
+html[data-lang="en"] .language-choice-fr {
+  background: transparent;
+  color: var(--muted);
+}
+
+html[data-lang="en"] .language-choice-en {
+  background: var(--green);
+  color: #ffffff;
+}
+
+html[data-lang="en"] .support-card::before {
+  content: "Donation";
+}
+
+html[data-lang="en"] .support-card:nth-child(2)::before {
+  content: "Sponsorship";
+}
+
+@media (max-width: 920px) {
+  .brand-cluster {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-cluster {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .brand-cluster .brand-link {
+    width: auto;
+    min-width: 0;
+  }
+
+  .language-toggle {
+    flex: 0 0 auto;
+    min-width: 74px;
+    min-height: 32px;
+    padding: 3px;
+    font-size: 0.68rem;
+  }
+
+  .language-choice {
+    min-height: 24px;
+    padding-inline: 6px;
+  }
+}
