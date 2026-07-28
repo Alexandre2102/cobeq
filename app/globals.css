@@ -225,7 +225,10 @@ p {
 .site-footer p {
   text-align: justify;
   text-wrap: pretty;
-  hyphens: auto;
+  -webkit-hyphens: none;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 h1 {
