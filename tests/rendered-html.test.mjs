@@ -32,6 +32,8 @@ test("server-renders the bilingual COBEQ site", async () => {
   assert.match(html, /<title>PMC COBEQ \| Projet majeur de conception en g.nie<\/title>/i);
   assert.match(html, /Module robotis. de cueillette de fraises/);
   assert.match(html, /Dons et commandites/);
+  assert.doesNotMatch(html, /mandat; la validation/);
+  assert.doesNotMatch(html, /; COBEQ concentre/);
   assert.match(html, /data-language-toggle/);
   assert.match(html, /src="\/i18n\.js"/);
   assert.match(html, /FR/);
@@ -69,6 +71,8 @@ test("keeps translation and support guide details available", async () => {
   assert.match(css, /html\[data-lang="en"\] \.support-card::before/);
   assert.match(i18n, /Robotic strawberry harvesting module/);
   assert.match(i18n, /Donations and sponsorships/);
+  assert.doesNotMatch(i18n, /mandate; validation/);
+  assert.doesNotMatch(i18n, /market; COBEQ/);
   assert.match(i18n, /Make a donation/);
   assert.match(i18n, /Become a sponsor/);
   assert.match(i18n, /No tax receipt is issued for a sponsorship/);

@@ -358,7 +358,7 @@ export default function Home() {
           <p className="section-kicker">Objectifs du projet</p>
           <h2>Le livrable du prototype.</h2>
           <p>
-            Le livrable visé est un démonstrateur de cueillette à trois préhenseurs, conçu, fabriqué, intégré et validé sur un banc d’essai représentatif d’une culture de fraises hors-sol en serre. À partir de la position connue d’une fraise cible, le prototype doit exécuter un cycle complet: approche, coupe du pédoncule, soutien, transfert, dépôt et emmagasinage dans un bac. La vision et la sélection des fruits ne font pas partie du mandat; la validation porte d’abord sur le rendement, le taux de succès et les dommages visibles.
+            Le livrable visé est un démonstrateur de cueillette à trois préhenseurs, conçu, fabriqué, intégré et validé sur un banc d’essai représentatif d’une culture de fraises hors-sol en serre. À partir de la position connue d’une fraise cible, le prototype doit exécuter un cycle complet: approche, coupe du pédoncule, soutien, transfert, dépôt et emmagasinage dans un bac. La vision et la sélection des fruits ne font pas partie du mandat. La validation porte d’abord sur le rendement, le taux de succès et les dommages visibles.
           </p>
         </div>
         <div className="objective-grid">
@@ -413,7 +413,7 @@ export default function Home() {
           <span>Module dédié à la cueillette</span>
           <p>
             Le déplacement autonome est volontairement hors périmètre. Des solutions de mobilité
-            existent déjà sur le marché; COBEQ concentre l’effort sur la cueillette, parce que
+            existent déjà sur le marché. COBEQ concentre l’effort sur la cueillette, parce que
             c’est là que se jouent le rendement, le taux de succès et la qualité du fruit.
           </p>
         </aside>
