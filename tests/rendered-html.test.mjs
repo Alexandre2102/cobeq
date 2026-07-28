@@ -89,6 +89,9 @@ test("keeps translation and support guide details available", async () => {
   assert.match(css, /\.nav-links \.nav-instagram/);
   assert.match(css, /\.portrait-frame-pending/);
   assert.match(css, /\.support-tooltip/);
+  assert.match(css, /\.support-info\s*\{[^}]*display:\s*contents/s);
+  assert.match(css, /\.support-tooltip\s*\{[^}]*grid-column:\s*1 \/ -1/s);
+  assert.doesNotMatch(css, /\.support-tooltip\s*\{[^}]*position:\s*absolute/s);
   assert.match(css, /terrain-fleur-fraise\.jpeg/);
   assert.match(css, /terrain-rangs-sous-tunnel\.jpeg/);
   assert.match(css, /serre-rangs-suspendus\.jpg/);
