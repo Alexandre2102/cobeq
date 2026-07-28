@@ -99,6 +99,7 @@ test("keeps translation and support guide details available", async () => {
   assert.match(css, /@media \(min-width: 921px\) and \(max-width: 1180px\)/);
   assert.match(css, /flex-wrap:\s*nowrap/);
   assert.match(css, /flex:\s*0 0 34px/);
+  assert.match(css, /\.timeline-item p\s*\{[^}]*text-align:\s*left/s);
   assert.doesNotMatch(css, /hyphens:\s*auto/);
   assert.match(css, /hyphens:\s*none/);
   assert.doesNotMatch(css, /overflow-x:\s*auto/);
