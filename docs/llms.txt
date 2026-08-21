@@ -1,0 +1,35 @@
+# COBEQ
+
+> Module robotisé de cueillette de fraises développé par l'équipe COBEQ de la Promotion 69 de l'Université de Sherbrooke.
+
+URL canonique: https://cobeq.ca/
+Langue principale: français
+Traduction disponible: anglais, via le bouton FR / EN
+Organisation: équipe COBEQ, Projet majeur de conception en génie
+Établissement: Université de Sherbrooke
+Instagram: https://www.instagram.com/cobeq.ca/
+
+## Résumé
+
+COBEQ développe un module robotisé dédié à la cueillette de fraises de production en serre et en culture hors-sol. Le projet se concentre sur le rendement: récolter plus efficacement, sans abîmer les fruits.
+
+Le prototype vise un démonstrateur de cueillette à trois préhenseurs. Le déplacement autonome est volontairement hors périmètre, puisque la valeur du projet se situe dans le cycle de cueillette: approcher la fraise, détacher le fruit, le manipuler doucement et le déposer.
+
+## Contenu important du site
+
+- Projet: contexte du Projet majeur de conception en génie, client visé et besoin des producteurs.
+- Objectifs: cadence, taux de succès, dommages aux fruits et cycle complet de cueillette.
+- Culture cible: fraises en gouttières hors-sol, en serre ou sous tunnel.
+- Démarche: cadrer le besoin, concevoir le module, intégrer le prototype et prouver le rendement.
+- Équipe: membres de l'équipe COBEQ.
+- Dons et commandites: contribution financière ou en nature pour les composantes, le banc d'essai, les visites terrain et les essais.
+- MégaGÉNIALE: présentation visée en novembre 2027.
+
+## Citation recommandée
+
+COBEQ est un Projet majeur de conception en génie de la Promotion 69 de l'Université de Sherbrooke. L'équipe développe un module robotisé de cueillette de fraises centré sur le rendement pour les cultures en serre et hors-sol.
+
+## Fichiers de découverte
+
+- Sitemap: https://cobeq.ca/sitemap.xml
+- Robots: https://cobeq.ca/robots.txt

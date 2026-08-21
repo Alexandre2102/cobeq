@@ -6,8 +6,14 @@ test("exports a static bilingual GitHub Pages build", async () => {
   const html = await readFile(new URL("../docs/index.html", import.meta.url), "utf8");
   const i18n = await readFile(new URL("../docs/i18n.js", import.meta.url), "utf8");
   const cname = await readFile(new URL("../docs/CNAME", import.meta.url), "utf8");
+  const sitemap = await readFile(new URL("../docs/sitemap.xml", import.meta.url), "utf8");
+  const robots = await readFile(new URL("../docs/robots.txt", import.meta.url), "utf8");
+  const llms = await readFile(new URL("../docs/llms.txt", import.meta.url), "utf8");
 
   assert.match(html, /<title>PMC COBEQ \| Projet majeur de conception en génie<\/title>/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/cobeq\.ca\/"/);
+  assert.match(html, /<meta name="robots" content="index, follow"/);
+  assert.match(html, /<meta property="og:url" content="https:\/\/cobeq\.ca\/"/);
   assert.match(html, /Module robotisé de cueillette de fraises/);
   assert.match(html, /Dons et commandites/);
   assert.match(html, /data-language-toggle/);
@@ -17,7 +23,7 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.match(i18n, /Become a sponsor/);
   assert.match(html, /https:\/\/www\.instagram\.com\/cobeq\.ca\//);
   assert.match(html, /href="\.\/brand\/logo\.png"/);
-  assert.match(html, /href="\.\/brand\/favicon\.png"/);
+  assert.match(html, /href="https:\/\/cobeq\.ca\/brand\/favicon\.png"/);
   assert.match(html, /src="\.\/brand\/instagram-couleur\.png"/);
   assert.match(html, /url\(\.\/culture\/serre-rangs-suspendus\.jpg\)/);
   assert.match(html, /url\(\.\/culture\/terrain-hero-serre\.jpeg\)/);
@@ -30,4 +36,12 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.doesNotMatch(html, /src="\//);
   assert.doesNotMatch(html, /modulepreload/);
   assert.equal(cname.trim(), "cobeq.ca");
+  assert.match(sitemap, /<loc>https:\/\/cobeq\.ca\/<\/loc>/);
+  assert.match(sitemap, /<lastmod>2026-08-21<\/lastmod>/);
+  assert.match(robots, /User-agent: OAI-SearchBot/);
+  assert.match(robots, /User-agent: ClaudeBot/);
+  assert.match(robots, /User-agent: Google-Extended/);
+  assert.match(robots, /Sitemap: https:\/\/cobeq\.ca\/sitemap\.xml/);
+  assert.match(llms, /Module robotisé de cueillette de fraises/);
+  assert.match(llms, /https:\/\/cobeq\.ca\/sitemap\.xml/);
 });

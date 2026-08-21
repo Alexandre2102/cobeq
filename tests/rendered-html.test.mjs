@@ -35,6 +35,9 @@ test("server-renders the bilingual COBEQ site", async () => {
   assert.doesNotMatch(html, /mandat; la validation/);
   assert.doesNotMatch(html, /; COBEQ concentre/);
   assert.match(html, /data-language-toggle/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/cobeq\.ca\/"/);
+  assert.match(html, /<meta name="robots" content="index, follow"/);
+  assert.match(html, /<meta property="og:url" content="https:\/\/cobeq\.ca\/"/);
   assert.match(html, /src="\/i18n\.js"/);
   assert.match(html, /FR/);
   assert.match(html, /EN/);
