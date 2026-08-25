@@ -209,7 +209,7 @@ const supportOptions = [
   {
     title: "Faire un don",
     text: "Un appui ponctuel aide l’équipe à financer le prototype à trois préhenseurs, les essais et les itérations de conception.",
-    action: "Contacter l’équipe",
+    action: "Écrire par courriel",
     href: communicationHref("COBEQ - Don"),
     tooltipTitle: "Informations pour donateur",
     tooltipItems: [
@@ -222,7 +222,7 @@ const supportOptions = [
   {
     title: "Devenir commanditaire",
     text: "Une contribution financière ou en nature peut soutenir les composantes, l’usinage, les essais terrain ou l’accès à des ressources de prototypage.",
-    action: "Proposer une commandite",
+    action: "Écrire par courriel",
     href: communicationHref("COBEQ - Commandite"),
     tooltipTitle: "Informations pour commanditaire",
     tooltipItems: [
@@ -499,8 +499,12 @@ export default function Home() {
             <p className="section-kicker">Dons et commandites</p>
             <h2>Soutenir COBEQ.</h2>
             <p>
-              COBEQ cherche des contributeurs pour franchir les étapes clés du prototype: composantes, fabrication, banc d’essai, mesures de rendement et validation du cycle de cueillette.
+              Pour un don, une commandite ou une question, la communication se fait directement par courriel avec Alexandre Tanguay, responsable des communications.
             </p>
+            <div className="email-only-banner">
+              <span>Communication par courriel seulement</span>
+              <a href={`mailto:${communicationContact.email}`}>{communicationContact.email}</a>
+            </div>
             <div className="support-facts" aria-label="Priorités du soutien">
               <span>Prototype à trois préhenseurs</span>
               <span>Essais de rendement</span>
@@ -541,6 +545,9 @@ export default function Home() {
                   </span>
                 </div>
                 <p>{option.text}</p>
+                <a href={option.href} className="support-card-email">
+                  {communicationContact.email}
+                </a>
                 <a href={option.href} className="button primary">{option.action}</a>
               </article>
             ))}

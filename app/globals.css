@@ -1335,6 +1335,35 @@ h1 {
   box-shadow: 0 16px 34px rgba(23, 33, 27, 0.08);
 }
 
+.email-only-banner {
+  display: grid;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 16px 18px;
+  border: 1px solid rgba(0, 107, 57, 0.18);
+  border-left: 5px solid var(--red);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 34px rgba(23, 33, 27, 0.08);
+}
+
+.email-only-banner span {
+  color: var(--red-dark);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.email-only-banner a {
+  color: var(--green-dark);
+  font-size: clamp(1.05rem, 1.7vw, 1.32rem);
+  font-weight: 900;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+}
+
 .support-contact {
   display: grid;
   gap: 6px;
@@ -1468,6 +1497,20 @@ h1 {
 .support-card p {
   text-align: left;
   hyphens: none;
+}
+
+.support-card-email {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  color: var(--green-dark);
+  font-weight: 900;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.support-card-email:hover {
+  color: var(--red-dark);
 }
 
 .support-card .button {
