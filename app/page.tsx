@@ -513,10 +513,6 @@ export default function Home() {
             <div className="support-note">
               Les contributions peuvent être financières ou en nature. Lorsqu’une entente officielle est nécessaire, l’équipe s’arrime au cadre PMC de la Faculté de génie et aux démarches de partenariat de l’Université de Sherbrooke.
             </div>
-            <div className="support-contact">
-              <span>{communicationContact.role}</span>
-              <a href={`mailto:${communicationContact.email}`}>{communicationContact.name} · {communicationContact.email}</a>
-            </div>
             <a className="social-link instagram-icon-link" href="https://www.instagram.com/cobeq.ca/" target="_blank" rel="noreferrer" aria-label="Instagram COBEQ">
               <img src="/brand/instagram-couleur.png" alt="" />
             </a>
@@ -545,9 +541,6 @@ export default function Home() {
                   </span>
                 </div>
                 <p>{option.text}</p>
-                <a href={option.href} className="support-card-email">
-                  {communicationContact.email}
-                </a>
                 <a href={option.href} className="button primary">{option.action}</a>
               </article>
             ))}

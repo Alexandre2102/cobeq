@@ -26,7 +26,7 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.match(html, /mailto:tana2102@usherbrooke\.ca\?subject=COBEQ%20-%20Commandite/);
   assert.match(html, /Communication par courriel seulement/);
   assert.equal((html.match(/>Écrire par courriel</g) ?? []).length, 2);
-  assert.equal((html.match(/class="support-card-email"/g) ?? []).length, 2);
+  assert.doesNotMatch(html, /class="support-card-email"/);
   assert.match(html, /data-language-toggle/);
   assert.match(html, /src="\.\/i18n\.js" defer/);
   assert.match(i18n, /Robotic strawberry harvesting module/);
