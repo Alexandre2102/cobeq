@@ -124,6 +124,8 @@ test("keeps translation and support guide details available", async () => {
   assert.doesNotMatch(css, /overflow-x:\s*auto/);
   assert.doesNotMatch(css, /text-overflow:\s*ellipsis/);
   assert.match(css, /\.projects-hero/);
+  assert.match(css, /@media \(max-width: 1180px\)\s*\{[^}]*\.projects-hero-inner\s*\{[^}]*grid-template-columns:\s*1fr/s);
+  assert.match(css, /\.projects-hero-wordmark\s*\{[^}]*transform:\s*translateX\(-7\.7%\)/s);
   assert.match(css, /\.updates-grid/);
   assert.match(css, /\.announcement-type-card/);
 });
