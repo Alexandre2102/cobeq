@@ -85,6 +85,7 @@
     "Équipe COBEQ": "COBEQ team",
     "Les membres qui portent le projet.": "The members carrying the project.",
     "Génie robotique": "Robotics engineering",
+    "Responsable des communications": "Communications lead",
     "Génie électrique": "Electrical engineering",
     "Génie mécanique": "Mechanical engineering",
     "En attente d'une photo": "Photo pending",
