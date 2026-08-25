@@ -226,7 +226,6 @@ p {
 .info-card p,
 .timeline-item p,
 .team-copy > p:not(.section-kicker),
-.support-copy > p:not(.section-kicker),
 .site-footer p {
   text-align: justify;
   text-wrap: pretty;
@@ -1262,8 +1261,8 @@ h1 {
 
 .support-layout {
   display: grid;
-  grid-template-columns: minmax(280px, 0.88fr) minmax(320px, 1.12fr);
-  gap: clamp(22px, 4vw, 48px);
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 28px);
   align-items: stretch;
   width: min(1160px, 100%);
   margin-inline: auto;
@@ -1277,12 +1276,22 @@ h1 {
 
 .support-copy {
   display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(270px, 340px);
   align-content: center;
-  gap: 18px;
+  align-items: start;
+  column-gap: clamp(24px, 5vw, 72px);
+  row-gap: 22px;
   min-width: 0;
   padding: clamp(18px, 2.4vw, 28px);
   border-left: 6px solid var(--green);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(246, 255, 214, 0.5));
+}
+
+.support-copy-main {
+  display: grid;
+  gap: 18px;
+  max-width: 700px;
+  min-width: 0;
 }
 
 .support-copy h2 {
@@ -1299,32 +1308,18 @@ h1 {
   line-height: 1.62;
 }
 
-.support-facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.support-facts span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 34px;
-  padding: 8px 11px;
-  border: 1px solid rgba(0, 107, 57, 0.16);
-  border-radius: 999px;
-  background: #102016;
-  color: #f6ffd6;
-  font-size: 0.84rem;
-  font-weight: 900;
-  line-height: 1.15;
-}
-
-.support-facts span:nth-child(2) {
-  background: var(--red);
-  color: white;
+.support-channel {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  justify-items: start;
+  justify-self: end;
+  width: min(100%, 340px);
+  min-width: 0;
 }
 
 .support-note {
+  grid-column: 1 / -1;
   padding: 18px 20px;
   border-left: 5px solid var(--green);
   border-radius: 8px;
@@ -1362,6 +1357,10 @@ h1 {
   font-weight: 900;
   line-height: 1.18;
   overflow-wrap: anywhere;
+}
+
+.support-channel .email-only-banner {
+  width: 100%;
 }
 
 .footer-contact span {
@@ -2634,6 +2633,24 @@ h1 {
 }
 
 @media (max-width: 760px) {
+  .support-copy {
+    grid-template-columns: 1fr;
+  }
+
+  .support-channel,
+  .support-note {
+    grid-column: auto;
+  }
+
+  .support-channel {
+    justify-self: start;
+    width: min(100%, 420px);
+  }
+
+  .support-channel .email-only-banner {
+    max-width: 420px;
+  }
+
   .intro-band::after,
   .focus-band::before,
   .objective-band::after,
@@ -2653,7 +2670,6 @@ h1 {
   .info-card p,
   .timeline-item p,
   .team-copy > p:not(.section-kicker),
-  .support-copy > p:not(.section-kicker),
   .support-card p,
   .site-footer p {
     text-align: left;

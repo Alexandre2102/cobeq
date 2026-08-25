@@ -43,6 +43,7 @@ test("server-renders the bilingual COBEQ site", async () => {
   assert.match(html, /Communication par courriel seulement/);
   assert.equal((html.match(/>Écrire par courriel</g) ?? []).length, 2);
   assert.doesNotMatch(html, /class="support-card-email"/);
+  assert.doesNotMatch(html, /class="support-facts"/);
   assert.doesNotMatch(html, /mandat; la validation/);
   assert.doesNotMatch(html, /; COBEQ concentre/);
   assert.match(html, /data-language-toggle/);

@@ -496,26 +496,25 @@ export default function Home() {
       <section className="content-band support-band" id="contribuer">
         <div className="support-layout">
           <div className="support-copy">
-            <p className="section-kicker">Dons et commandites</p>
-            <h2>Soutenir COBEQ.</h2>
-            <p>
-              Pour un don, une commandite ou une question, la communication se fait directement par courriel avec Alexandre Tanguay, responsable des communications.
-            </p>
-            <div className="email-only-banner">
-              <span>Communication par courriel seulement</span>
-              <a href={`mailto:${communicationContact.email}`}>{communicationContact.email}</a>
+            <div className="support-copy-main">
+              <p className="section-kicker">Dons et commandites</p>
+              <h2>Soutenir COBEQ.</h2>
+              <p>
+                Pour un don, une commandite ou une question, la communication se fait directement par courriel avec Alexandre Tanguay, responsable des communications.
+              </p>
             </div>
-            <div className="support-facts" aria-label="Priorités du soutien">
-              <span>Prototype à trois préhenseurs</span>
-              <span>Essais de rendement</span>
-              <span>Terrain et banc d’essai</span>
+            <div className="support-channel">
+              <div className="email-only-banner">
+                <span>Communication par courriel seulement</span>
+                <a href={`mailto:${communicationContact.email}`}>{communicationContact.email}</a>
+              </div>
+              <a className="social-link instagram-icon-link" href="https://www.instagram.com/cobeq.ca/" target="_blank" rel="noreferrer" aria-label="Instagram COBEQ">
+                <img src="/brand/instagram-couleur.png" alt="" />
+              </a>
             </div>
             <div className="support-note">
               Les contributions peuvent être financières ou en nature. Lorsqu’une entente officielle est nécessaire, l’équipe s’arrime au cadre PMC de la Faculté de génie et aux démarches de partenariat de l’Université de Sherbrooke.
             </div>
-            <a className="social-link instagram-icon-link" href="https://www.instagram.com/cobeq.ca/" target="_blank" rel="noreferrer" aria-label="Instagram COBEQ">
-              <img src="/brand/instagram-couleur.png" alt="" />
-            </a>
           </div>
 
           <div className="support-actions">
