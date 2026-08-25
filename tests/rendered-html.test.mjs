@@ -140,6 +140,8 @@ test("server-renders the projects and accomplishments page", async () => {
   assert.match(html, /<link rel="canonical" href="https:\/\/cobeq\.ca\/projets"/);
   assert.match(html, /Projets et accomplissements/);
   assert.match(html, /Journal du projet/);
+  assert.doesNotMatch(html, /Pourquoi cette page/);
+  assert.doesNotMatch(html, /Documenter l.avancement sans m.langer la pr.sentation principale/);
   assert.match(html, /Visite terrain/);
   assert.match(html, /Financement/);
   assert.match(html, /Bourses, dons et commandites confirm.s/);

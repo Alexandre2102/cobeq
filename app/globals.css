@@ -2256,14 +2256,6 @@ h1 {
   line-height: 1.55;
 }
 
-.projects-intro-band {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.92fr) minmax(300px, 1.08fr);
-  gap: clamp(28px, 6vw, 90px);
-  align-items: end;
-  background: #ffffff;
-}
-
 .updates-band {
   background: linear-gradient(180deg, #f6fbef 0%, #fffdf7 100%);
 }
@@ -2598,7 +2590,6 @@ h1 {
   }
 
   .projects-hero-inner,
-  .projects-intro-band,
   .publish-update-panel {
     grid-template-columns: 1fr;
   }

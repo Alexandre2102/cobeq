@@ -144,16 +144,6 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="content-band projects-intro-band">
-        <div className="section-heading">
-          <p className="section-kicker">Pourquoi cette page</p>
-          <h2>Documenter l’avancement sans mélanger la présentation principale.</h2>
-        </div>
-        <p className="intro-text">
-          La page d’accueil explique rapidement le projet. Cette page sert plutôt de carnet public pour montrer les nouvelles photos, les étapes franchies et les appuis confirmés au fil du développement.
-        </p>
-      </section>
-
       <section className="content-band updates-band" id="publications">
         <div className="section-heading center">
           <p className="section-kicker">Publications</p>
