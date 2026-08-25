@@ -257,6 +257,7 @@ export default function Home() {
         </div>
         <nav className="nav-links" aria-label="Sections du site">
           <a href="#projet">Projet</a>
+          <a href="/projets">Journal</a>
           <a href="#objectifs">Objectifs</a>
           <a href="#udes">UDS</a>
           <a href="#demarche">Démarche</a>

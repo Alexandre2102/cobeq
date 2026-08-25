@@ -4,6 +4,7 @@ import test from "node:test";
 
 test("exports a static bilingual GitHub Pages build", async () => {
   const html = await readFile(new URL("../docs/index.html", import.meta.url), "utf8");
+  const projectsHtml = await readFile(new URL("../docs/projets/index.html", import.meta.url), "utf8");
   const i18n = await readFile(new URL("../docs/i18n.js", import.meta.url), "utf8");
   const cname = await readFile(new URL("../docs/CNAME", import.meta.url), "utf8");
   const sitemap = await readFile(new URL("../docs/sitemap.xml", import.meta.url), "utf8");
@@ -12,6 +13,7 @@ test("exports a static bilingual GitHub Pages build", async () => {
 
   assert.match(html, /<title>PMC COBEQ \| Projet majeur de conception en génie<\/title>/);
   assert.match(html, /<link rel="canonical" href="https:\/\/cobeq\.ca\/"/);
+  assert.match(html, /href="\.\/projets"/);
   assert.match(html, /<meta name="robots" content="index, follow"/);
   assert.match(html, /<meta property="og:url" content="https:\/\/cobeq\.ca\/"/);
   assert.match(html, /Module robotisé de cueillette de fraises/);
@@ -26,6 +28,8 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.match(html, /src="\.\/i18n\.js" defer/);
   assert.match(i18n, /Robotic strawberry harvesting module/);
   assert.match(i18n, /Support COBEQ/);
+  assert.match(i18n, /Projects and milestones/);
+  assert.match(i18n, /Funding received/);
   assert.match(i18n, /Become a sponsor/);
   assert.match(i18n, /Communications lead/);
   assert.match(html, /https:\/\/www\.instagram\.com\/cobeq\.ca\//);
@@ -42,14 +46,33 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.doesNotMatch(html, /href="\//);
   assert.doesNotMatch(html, /src="\//);
   assert.doesNotMatch(html, /modulepreload/);
+  assert.match(projectsHtml, /<title>Projets et accomplissements \| COBEQ<\/title>/);
+  assert.match(projectsHtml, /<link rel="canonical" href="https:\/\/cobeq\.ca\/projets"/);
+  assert.match(projectsHtml, /Projets et accomplissements/);
+  assert.match(projectsHtml, /Journal du projet/);
+  assert.match(projectsHtml, /Visite terrain/);
+  assert.match(projectsHtml, /Financement/);
+  assert.match(projectsHtml, /Bourses, dons et commandites confirmés/);
+  assert.match(projectsHtml, /href="\.\.\/#projet"/);
+  assert.match(projectsHtml, /href="\.\.\/projets"/);
+  assert.match(projectsHtml, /src="\.\.\/i18n\.js" defer/);
+  assert.match(projectsHtml, /src="\.\.\/culture\/terrain-rangs-sous-tunnel\.jpeg"/);
+  assert.match(projectsHtml, /src="\.\.\/culture\/terrain-detail-pedoncule\.jpeg"/);
+  assert.match(projectsHtml, /url\(\.\.\/culture\/terrain-rangs-sous-tunnel\.jpeg\)/);
+  assert.match(projectsHtml, /mailto:tana2102@usherbrooke\.ca\?subject=COBEQ%20-%20Publication%20projet/);
+  assert.doesNotMatch(projectsHtml, /href="\//);
+  assert.doesNotMatch(projectsHtml, /src="\//);
+  assert.doesNotMatch(projectsHtml, /modulepreload/);
   assert.equal(cname.trim(), "cobeq.ca");
   assert.match(sitemap, /<loc>https:\/\/cobeq\.ca\/<\/loc>/);
-  assert.match(sitemap, /<lastmod>2026-08-21<\/lastmod>/);
+  assert.match(sitemap, /<lastmod>2026-08-25<\/lastmod>/);
+  assert.match(sitemap, /<loc>https:\/\/cobeq\.ca\/projets\/<\/loc>/);
   assert.match(robots, /User-agent: OAI-SearchBot/);
   assert.match(robots, /User-agent: ClaudeBot/);
   assert.match(robots, /User-agent: Google-Extended/);
   assert.match(robots, /Sitemap: https:\/\/cobeq\.ca\/sitemap\.xml/);
   assert.match(llms, /Module robotisé de cueillette de fraises/);
+  assert.match(llms, /Page projets et accomplissements: https:\/\/cobeq\.ca\/projets\//);
   assert.match(llms, /tana2102@usherbrooke\.ca/);
   assert.match(llms, /https:\/\/cobeq\.ca\/sitemap\.xml/);
 });

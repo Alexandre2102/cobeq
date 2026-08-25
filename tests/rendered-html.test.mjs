@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
+async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${path}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -31,6 +31,8 @@ test("server-renders the bilingual COBEQ site", async () => {
   const html = await response.text();
   assert.match(html, /<title>PMC COBEQ \| Projet majeur de conception en g.nie<\/title>/i);
   assert.match(html, /Module robotis. de cueillette de fraises/);
+  assert.match(html, /href="\/projets"/);
+  assert.match(html, /Journal/);
   assert.match(html, /Dons et commandites/);
   assert.match(html, /Responsable des communications/);
   assert.match(html, /tana2102@usherbrooke\.ca/);
@@ -108,7 +110,7 @@ test("keeps translation and support guide details available", async () => {
   assert.match(css, /terrain-hero-serre\.jpeg/);
   assert.match(css, /terrain-detail-pedoncule\.jpeg/);
   assert.doesNotMatch(css, /(?:rang-hors-sol-detail|tunnel-hors-sol|tunnel-rendement|fraise-proche-pedoncule)\.(?:jpg|png)/);
-  assert.match(css, /grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/);
+  assert.match(css, /grid-template-columns:\s*repeat\(5, minmax\(0, 1fr\)\)/);
   assert.match(css, /@media \(min-width: 921px\) and \(max-width: 1180px\)/);
   assert.match(css, /flex-wrap:\s*nowrap/);
   assert.match(css, /flex:\s*0 0 34px/);
@@ -118,4 +120,27 @@ test("keeps translation and support guide details available", async () => {
   assert.match(css, /hyphens:\s*none/);
   assert.doesNotMatch(css, /overflow-x:\s*auto/);
   assert.doesNotMatch(css, /text-overflow:\s*ellipsis/);
+  assert.match(css, /\.projects-hero/);
+  assert.match(css, /\.updates-grid/);
+  assert.match(css, /\.announcement-type-card/);
+});
+
+test("server-renders the projects and accomplishments page", async () => {
+  const response = await render("/projets");
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+
+  const html = await response.text();
+  assert.match(html, /<title>Projets et accomplissements \| COBEQ<\/title>/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/cobeq\.ca\/projets"/);
+  assert.match(html, /Projets et accomplissements/);
+  assert.match(html, /Journal du projet/);
+  assert.match(html, /Visite terrain/);
+  assert.match(html, /Financement/);
+  assert.match(html, /Bourses, dons et commandites confirm.s/);
+  assert.match(html, /mailto:tana2102@usherbrooke\.ca\?subject=COBEQ%20-%20Publication%20projet/);
+  assert.match(html, /src="\/culture\/terrain-rangs-sous-tunnel\.jpeg"/);
+  assert.match(html, /src="\/culture\/terrain-detail-pedoncule\.jpeg"/);
+  assert.match(html, /data-language-toggle/);
+  assert.match(html, /src="\/i18n\.js"/);
 });
