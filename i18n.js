@@ -152,7 +152,6 @@
     "Photos, financement et bourses": "Photos, funding and awards",
     "Le contenu pourra évoluer au rythme du PMC sans alourdir la page d’accueil.": "The content can evolve with the PMC without overloading the homepage.",
     "Publications": "Posts",
-    "Les prochaines annonces auront un endroit clair.": "Upcoming announcements will have a clear place.",
     "Visite terrain": "Field visit",
     "Juillet 2026": "July 2026",
     "Observer la culture hors-sol sous tunnel": "Observe soilless production under tunnels",
