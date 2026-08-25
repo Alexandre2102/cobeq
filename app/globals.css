@@ -2159,17 +2159,27 @@ h1 {
   background:
     linear-gradient(180deg, rgba(255, 253, 247, 0.92), rgba(245, 250, 239, 0.96)),
     #fffdf7;
+  display: flex;
+  flex-direction: column;
 }
 
 .projects-hero {
   position: relative;
   isolation: isolate;
+  display: grid;
+  align-items: center;
+  flex: 1 0 auto;
+  min-height: clamp(520px, 56svh, 760px);
   overflow: hidden;
   padding: clamp(54px, 7vw, 92px) clamp(20px, 5vw, 80px);
   background:
     linear-gradient(96deg, rgba(16, 32, 24, 0.94) 0%, rgba(16, 32, 24, 0.86) 39%, rgba(16, 32, 24, 0.52) 66%, rgba(16, 32, 24, 0.22) 100%),
     url("/culture/terrain-rangs-sous-tunnel.jpeg") center / cover no-repeat;
   color: #ffffff;
+}
+
+.projects-page .site-footer {
+  flex: 0 0 auto;
 }
 
 .projects-hero::after {
