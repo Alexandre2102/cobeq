@@ -116,6 +116,8 @@ type TeamMember = {
   position?: string;
   initials?: string;
   photoStatus?: string;
+  contactRole?: string;
+  contactEmail?: string;
 };
 
 const teamMembers: TeamMember[] = [
@@ -125,6 +127,8 @@ const teamMembers: TeamMember[] = [
     accentKey: "green",
     image: "/team/alexandre-tanguay.png",
     position: "center 38%",
+    contactRole: "Responsable des communications",
+    contactEmail: "tana2102@usherbrooke.ca",
   },
   {
     name: "Sébastien Paquette",
@@ -197,6 +201,7 @@ const supportOptions = [
     title: "Faire un don",
     text: "Un appui ponctuel aide l’équipe à financer le prototype à trois préhenseurs, les essais et les itérations de conception.",
     action: "Contacter l’équipe",
+    href: "mailto:tana2102@usherbrooke.ca?subject=COBEQ%20-%20Don",
     tooltipTitle: "Informations pour donateur",
     tooltipItems: [
       "Un don est un appui sans visibilité publicitaire en échange.",
@@ -209,6 +214,7 @@ const supportOptions = [
     title: "Devenir commanditaire",
     text: "Une contribution financière ou en nature peut soutenir les composantes, l’usinage, les essais terrain ou l’accès à des ressources de prototypage.",
     action: "Proposer une commandite",
+    href: "mailto:tana2102@usherbrooke.ca?subject=COBEQ%20-%20Commandite",
     tooltipTitle: "Informations pour commanditaire",
     tooltipItems: [
       "Une commandite est un appui financier, matériel ou en services associé à une visibilité convenue.",
@@ -463,6 +469,14 @@ export default function Home() {
               <div className="member-info">
                 <h3>{member.name}</h3>
                 <span className={`member-program ${member.accentKey}`}>{member.program}</span>
+                {member.contactRole ? (
+                  <span className="member-role">{member.contactRole}</span>
+                ) : null}
+                {member.contactEmail ? (
+                  <a className="member-email" href={`mailto:${member.contactEmail}`}>
+                    {member.contactEmail}
+                  </a>
+                ) : null}
               </div>
             </article>
           ))}
@@ -484,6 +498,10 @@ export default function Home() {
             </div>
             <div className="support-note">
               Les contributions peuvent être financières ou en nature. Lorsqu’une entente officielle est nécessaire, l’équipe s’arrime au cadre PMC de la Faculté de génie et aux démarches de partenariat de l’Université de Sherbrooke.
+            </div>
+            <div className="support-contact">
+              <span>Responsable des communications</span>
+              <a href="mailto:tana2102@usherbrooke.ca">Alexandre Tanguay · tana2102@usherbrooke.ca</a>
             </div>
             <a className="social-link instagram-icon-link" href="https://www.instagram.com/cobeq.ca/" target="_blank" rel="noreferrer" aria-label="Instagram COBEQ">
               <img src="/brand/instagram-couleur.png" alt="" />
@@ -513,7 +531,7 @@ export default function Home() {
                   </span>
                 </div>
                 <p>{option.text}</p>
-                <a href="#equipe" className="button primary">{option.action}</a>
+                <a href={option.href} className="button primary">{option.action}</a>
               </article>
             ))}
           </div>
@@ -600,6 +618,10 @@ export default function Home() {
         <div>
           <strong>Projet majeur de conception COBEQ</strong>
           <p>Un module de cueillette robotisée de fraises, conçu par l’équipe COBEQ de la Promotion 69 de l’Université de Sherbrooke.</p>
+        </div>
+        <div className="footer-contact">
+          <span>Responsable des communications</span>
+          <a href="mailto:tana2102@usherbrooke.ca">Alexandre Tanguay · tana2102@usherbrooke.ca</a>
         </div>
         <div className="footer-links">
           <a className="footer-instagram instagram-icon-link" href="https://www.instagram.com/cobeq.ca/" target="_blank" rel="noreferrer" aria-label="Instagram COBEQ">

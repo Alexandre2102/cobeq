@@ -16,11 +16,15 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.match(html, /<meta property="og:url" content="https:\/\/cobeq\.ca\/"/);
   assert.match(html, /Module robotisé de cueillette de fraises/);
   assert.match(html, /Dons et commandites/);
+  assert.match(html, /Responsable des communications/);
+  assert.match(html, /tana2102@usherbrooke\.ca/);
+  assert.match(html, /mailto:tana2102@usherbrooke\.ca/);
   assert.match(html, /data-language-toggle/);
   assert.match(html, /src="\.\/i18n\.js" defer/);
   assert.match(i18n, /Robotic strawberry harvesting module/);
   assert.match(i18n, /Support COBEQ/);
   assert.match(i18n, /Become a sponsor/);
+  assert.match(i18n, /Communications lead/);
   assert.match(html, /https:\/\/www\.instagram\.com\/cobeq\.ca\//);
   assert.match(html, /href="\.\/brand\/logo\.png"/);
   assert.match(html, /href="https:\/\/cobeq\.ca\/brand\/favicon\.png"/);
@@ -43,5 +47,6 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.match(robots, /User-agent: Google-Extended/);
   assert.match(robots, /Sitemap: https:\/\/cobeq\.ca\/sitemap\.xml/);
   assert.match(llms, /Module robotisé de cueillette de fraises/);
+  assert.match(llms, /tana2102@usherbrooke\.ca/);
   assert.match(llms, /https:\/\/cobeq\.ca\/sitemap\.xml/);
 });

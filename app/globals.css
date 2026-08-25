@@ -1198,6 +1198,34 @@ h1 {
   line-height: 1.2;
 }
 
+.member-role {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  color: var(--red-dark);
+  font-size: 0.82rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.member-email {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  color: var(--green-dark);
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.member-email:hover {
+  color: var(--red-dark);
+}
+
 .member-program.mechanical {
   background: var(--red);
 }
@@ -1299,6 +1327,40 @@ h1 {
   font-weight: 750;
   line-height: 1.55;
   box-shadow: 0 16px 34px rgba(23, 33, 27, 0.08);
+}
+
+.support-contact {
+  display: grid;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(0, 107, 57, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 30px rgba(23, 33, 27, 0.08);
+}
+
+.support-contact span,
+.footer-contact span {
+  color: var(--red-dark);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.support-contact a,
+.footer-contact a {
+  color: var(--green-dark);
+  font-weight: 900;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.support-contact a:hover,
+.footer-contact a:hover {
+  color: var(--red-dark);
 }
 
 .social-link {
@@ -1951,6 +2013,21 @@ h1 {
 .site-footer p {
   margin-bottom: 0;
   color: #dce7de;
+}
+
+.footer-contact {
+  display: grid;
+  gap: 4px;
+  min-width: min(100%, 270px);
+}
+
+.footer-contact span {
+  color: #ffb8c1;
+}
+
+.footer-contact a {
+  color: #f6ffd6;
+  font-size: 0.95rem;
 }
 
 .footer-links {
