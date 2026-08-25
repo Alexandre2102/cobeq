@@ -3,6 +3,7 @@
 > Module robotisé de cueillette de fraises développé par l'équipe COBEQ de la Promotion 69 de l'Université de Sherbrooke.
 
 URL canonique: https://cobeq.ca/
+Page projets et accomplissements: https://cobeq.ca/projets/
 Langue principale: français
 Traduction disponible: anglais, via le bouton FR / EN
 Organisation: équipe COBEQ, Projet majeur de conception en génie
@@ -25,6 +26,7 @@ Le prototype vise un démonstrateur de cueillette à trois préhenseurs. Le dép
 - Équipe: membres de l'équipe COBEQ.
 - Dons et commandites: contribution financière ou en nature pour les composantes, le banc d'essai, les visites terrain et les essais.
 - MégaGÉNIALE: présentation visée en novembre 2027.
+- Projets et accomplissements: journal public pour les photos terrain, les jalons du prototype, les annonces de financement, les bourses et les commandites confirmées.
 
 ## Citation recommandée
 
