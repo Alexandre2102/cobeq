@@ -19,6 +19,9 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.match(html, /Responsable des communications/);
   assert.match(html, /tana2102@usherbrooke\.ca/);
   assert.match(html, /mailto:tana2102@usherbrooke\.ca/);
+  assert.match(html, /mailto:tana2102@usherbrooke\.ca\?subject=COBEQ%20-%20Soutien%20au%20prototype/);
+  assert.match(html, /mailto:tana2102@usherbrooke\.ca\?subject=COBEQ%20-%20Don/);
+  assert.match(html, /mailto:tana2102@usherbrooke\.ca\?subject=COBEQ%20-%20Commandite/);
   assert.match(html, /data-language-toggle/);
   assert.match(html, /src="\.\/i18n\.js" defer/);
   assert.match(i18n, /Robotic strawberry harvesting module/);

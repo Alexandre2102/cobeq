@@ -35,6 +35,9 @@ test("server-renders the bilingual COBEQ site", async () => {
   assert.match(html, /Responsable des communications/);
   assert.match(html, /tana2102@usherbrooke\.ca/);
   assert.match(html, /mailto:tana2102@usherbrooke\.ca/);
+  assert.match(html, /mailto:tana2102@usherbrooke\.ca\?subject=COBEQ%20-%20Soutien%20au%20prototype/);
+  assert.match(html, /mailto:tana2102@usherbrooke\.ca\?subject=COBEQ%20-%20Don/);
+  assert.match(html, /mailto:tana2102@usherbrooke\.ca\?subject=COBEQ%20-%20Commandite/);
   assert.doesNotMatch(html, /mandat; la validation/);
   assert.doesNotMatch(html, /; COBEQ concentre/);
   assert.match(html, /data-language-toggle/);
