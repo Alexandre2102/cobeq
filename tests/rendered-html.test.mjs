@@ -126,8 +126,6 @@ test("keeps translation and support guide details available", async () => {
   assert.match(css, /\.projects-hero/);
   assert.match(css, /@media \(max-width: 1180px\)\s*\{[^}]*\.projects-hero-inner\s*\{[^}]*grid-template-columns:\s*1fr/s);
   assert.match(css, /\.projects-hero-wordmark\s*\{[^}]*transform:\s*translateX\(-7\.7%\)/s);
-  assert.match(css, /\.updates-grid/);
-  assert.match(css, /\.announcement-type-card/);
 });
 
 test("server-renders the projects and accomplishments page", async () => {
@@ -140,15 +138,18 @@ test("server-renders the projects and accomplishments page", async () => {
   assert.match(html, /<link rel="canonical" href="https:\/\/cobeq\.ca\/projets"/);
   assert.match(html, /Projets et accomplissements/);
   assert.match(html, /Journal du projet/);
+  assert.match(html, /Publications . venir\./);
   assert.doesNotMatch(html, /Pourquoi cette page/);
   assert.doesNotMatch(html, /Documenter l.avancement sans m.langer la pr.sentation principale/);
   assert.doesNotMatch(html, /Les prochaines annonces auront un endroit clair/);
-  assert.match(html, /Visite terrain/);
-  assert.match(html, /Financement/);
-  assert.match(html, /Bourses, dons et commandites confirm.s/);
-  assert.match(html, /mailto:tana2102@usherbrooke\.ca\?subject=COBEQ%20-%20Publication%20projet/);
-  assert.match(html, /src="\/culture\/terrain-rangs-sous-tunnel\.jpeg"/);
-  assert.match(html, /src="\/culture\/terrain-detail-pedoncule\.jpeg"/);
+  assert.doesNotMatch(html, /Visite terrain/);
+  assert.doesNotMatch(html, /Financement/);
+  assert.doesNotMatch(html, /Bourses, dons et commandites confirm.s/);
+  assert.doesNotMatch(html, /Envoyer une annonce/);
+  assert.doesNotMatch(html, /Ajouter une publication/);
+  assert.doesNotMatch(html, /mailto:tana2102@usherbrooke\.ca\?subject=COBEQ%20-%20Publication%20projet/);
+  assert.doesNotMatch(html, /class="update-card/);
+  assert.doesNotMatch(html, /class="announcement-/);
   assert.match(html, /data-language-toggle/);
   assert.match(html, /src="\/i18n\.js"/);
 });
