@@ -147,7 +147,6 @@ export default function ProjectsPage() {
       <section className="content-band updates-band" id="publications">
         <div className="section-heading center">
           <p className="section-kicker">Publications</p>
-          <h2>Les prochaines annonces auront un endroit clair.</h2>
         </div>
         <div className="updates-grid">
           {projectUpdates.map((update, index) => (
