@@ -50,6 +50,8 @@ test("server-renders the bilingual COBEQ site", async () => {
   assert.match(html, /<link rel="canonical" href="https:\/\/cobeq\.ca\/"/);
   assert.match(html, /<meta name="robots" content="index, follow"/);
   assert.match(html, /<meta property="og:url" content="https:\/\/cobeq\.ca\/"/);
+  assert.match(html, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=GT-NF7N5FDR/);
+  assert.match(html, /gtag\('config', 'G-P8S4WPERL5'\)/);
   assert.match(html, /src="\/i18n\.js"/);
   assert.match(html, /FR/);
   assert.match(html, /EN/);
@@ -137,6 +139,8 @@ test("server-renders the projects and accomplishments page", async () => {
   const html = await response.text();
   assert.match(html, /<title>Projets et accomplissements \| COBEQ<\/title>/);
   assert.match(html, /<link rel="canonical" href="https:\/\/cobeq\.ca\/projets"/);
+  assert.match(html, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=GT-NF7N5FDR/);
+  assert.match(html, /gtag\('config', 'G-P8S4WPERL5'\)/);
   assert.match(html, /Projets et accomplissements/);
   assert.match(html, /Journal du projet/);
   assert.match(html, /Publications . venir\./);

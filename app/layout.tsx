@@ -1,6 +1,9 @@
 ﻿import type { Metadata } from "next";
 import "./globals.css";
 
+const googleAnalyticsId = "G-P8S4WPERL5";
+const googleTagId = "GT-NF7N5FDR";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://cobeq.ca"),
   title: "PMC COBEQ | Projet majeur de conception en génie",
@@ -50,6 +53,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <head>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`} />
+        <script
+          id="google-tag"
+          dangerouslySetInnerHTML={{
+            __html: `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${googleAnalyticsId}');
+`,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

@@ -16,6 +16,8 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.match(html, /href="\.\/projets"/);
   assert.match(html, /<meta name="robots" content="index, follow"/);
   assert.match(html, /<meta property="og:url" content="https:\/\/cobeq\.ca\/"/);
+  assert.match(html, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=GT-NF7N5FDR/);
+  assert.match(html, /gtag\('config', 'G-P8S4WPERL5'\)/);
   assert.match(html, /Module robotisé de cueillette de fraises/);
   assert.match(html, /Dons et commandites/);
   assert.match(html, /Responsable des communications/);
@@ -50,8 +52,11 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.doesNotMatch(html, /href="\//);
   assert.doesNotMatch(html, /src="\//);
   assert.doesNotMatch(html, /modulepreload/);
+  assert.doesNotMatch(html, /__VINEXT_RSC_CHUNKS__/);
   assert.match(projectsHtml, /<title>Projets et accomplissements \| COBEQ<\/title>/);
   assert.match(projectsHtml, /<link rel="canonical" href="https:\/\/cobeq\.ca\/projets"/);
+  assert.match(projectsHtml, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=GT-NF7N5FDR/);
+  assert.match(projectsHtml, /gtag\('config', 'G-P8S4WPERL5'\)/);
   assert.match(projectsHtml, /Projets et accomplissements/);
   assert.match(projectsHtml, /Journal du projet/);
   assert.match(projectsHtml, /Publications à venir\./);
@@ -68,6 +73,7 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.doesNotMatch(projectsHtml, /href="\//);
   assert.doesNotMatch(projectsHtml, /src="\//);
   assert.doesNotMatch(projectsHtml, /modulepreload/);
+  assert.doesNotMatch(projectsHtml, /__VINEXT_RSC_CHUNKS__/);
   assert.equal(cname.trim(), "cobeq.ca");
   assert.match(sitemap, /<loc>https:\/\/cobeq\.ca\/<\/loc>/);
   assert.match(sitemap, /<lastmod>2026-08-25<\/lastmod>/);

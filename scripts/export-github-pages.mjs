@@ -11,6 +11,15 @@ const pages = [
   { requestPath: "/projets", outputPath: "projets/index.html", assetPrefix: "../" },
 ];
 
+function shouldKeepStaticScript(script) {
+  const openingTag = script.match(/^<script\b[^>]*>/i)?.[0] ?? "";
+
+  return (
+    openingTag.includes("https://www.googletagmanager.com/gtag/js") ||
+    openingTag.includes('id="google-tag"')
+  );
+}
+
 const workerUrl = pathToFileURL(serverEntry);
 workerUrl.searchParams.set("static-export", `${Date.now()}`);
 
@@ -54,7 +63,7 @@ for (const page of pages) {
 
   html = html
     .replace(/<link rel="modulepreload"[^>]*>/g, "")
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "")
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, (script) => (shouldKeepStaticScript(script) ? script : ""))
     .replace(/<link rel="stylesheet" href="[^"]+\.css"[^>]*>/, `<style>${css}</style>`)
     .replaceAll('href="/', `href="${page.assetPrefix}`)
     .replaceAll('src="/', `src="${page.assetPrefix}`)
