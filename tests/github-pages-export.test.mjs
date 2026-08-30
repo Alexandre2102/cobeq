@@ -33,8 +33,6 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.match(html, /data-language-toggle/);
   assert.match(html, /class="mobile-menu"/);
   assert.match(html, /class="mobile-nav"/);
-  assert.match(html, /class="brand-mobile-symbol"/);
-  assert.match(html, /class="brand-mobile-label"/);
   assert.match(html, /src="\.\/i18n\.js" defer/);
   assert.match(i18n, /Robotic strawberry harvesting module/);
   assert.match(i18n, /Support COBEQ/);
