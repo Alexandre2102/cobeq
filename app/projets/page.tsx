@@ -42,7 +42,12 @@ export default function ProjectsPage() {
         <div className="brand-cluster">
           <a className="brand-link" href="/#accueil" aria-label="Retour à l’accueil PMC COBEQ">
             <img src="/brand/nom.png" alt="COBEQ" className="brand-wordmark" />
-            <span>PMC en génie</span>
+            <img src="/brand/logo.png" alt="" className="brand-mobile-symbol" />
+            <span className="brand-desktop-label">PMC en génie</span>
+            <span className="brand-mobile-label" aria-hidden="true">
+              <strong>COBEQ</strong>
+              <em>PMC en génie</em>
+            </span>
           </a>
           <button className="language-toggle" type="button" data-language-toggle aria-label="Traduire le site en anglais" aria-pressed="false">
             <span className="language-choice language-choice-fr">FR</span>

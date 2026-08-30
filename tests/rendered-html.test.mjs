@@ -57,6 +57,8 @@ test("server-renders the bilingual COBEQ site", async () => {
   assert.match(html, /EN/);
   assert.match(html, /class="mobile-menu"/);
   assert.match(html, /class="mobile-nav"/);
+  assert.match(html, /class="brand-mobile-symbol"/);
+  assert.match(html, /class="brand-mobile-label"/);
   assert.match(html, /https:\/\/www\.instagram\.com\/cobeq\.ca\//);
   assert.equal((html.match(/src="\/brand\/instagram-couleur\.png"/g) ?? []).length, 5);
   assert.doesNotMatch(html, />Suivre COBEQ sur Instagram</);
@@ -109,6 +111,8 @@ test("keeps translation and support guide details available", async () => {
   assert.match(css, /\.nav-links \.nav-instagram/);
   assert.match(css, /\.mobile-menu/);
   assert.match(css, /\.mobile-nav/);
+  assert.match(css, /\.brand-mobile-symbol/);
+  assert.match(css, /\.brand-mobile-label/);
   assert.match(css, /@media \(max-width: 760px\)/);
   assert.match(css, /\.nav-links\s*\{[^}]*display:\s*none/s);
   assert.match(css, /\.portrait-frame-pending/);
