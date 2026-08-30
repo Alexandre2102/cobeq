@@ -193,6 +193,26 @@
       button.setAttribute("aria-pressed", language === "en" ? "true" : "false");
       button.setAttribute("aria-label", language === "en" ? "Afficher le site en français" : "Traduire le site en anglais");
     }
+
+    updateMobileMenuLabels();
+  }
+
+  function updateMobileMenuLabels() {
+    for (const menu of document.querySelectorAll(".mobile-menu")) {
+      const summary = menu.querySelector("summary");
+      if (!summary) continue;
+      const opened = menu.hasAttribute("open");
+      summary.setAttribute(
+        "aria-label",
+        currentLanguage === "en"
+          ? opened
+            ? "Close menu"
+            : "Open menu"
+          : opened
+            ? "Fermer le menu"
+            : "Ouvrir le menu",
+      );
+    }
   }
 
   function initLanguageToggle() {
@@ -200,6 +220,18 @@
     for (const button of document.querySelectorAll("[data-language-toggle]")) {
       button.addEventListener("click", () => applyLanguage(currentLanguage === "fr" ? "en" : "fr"));
     }
+
+    for (const menu of document.querySelectorAll(".mobile-menu")) {
+      menu.addEventListener("toggle", updateMobileMenuLabels);
+    }
+
+    for (const link of document.querySelectorAll(".mobile-nav a")) {
+      link.addEventListener("click", () => {
+        link.closest(".mobile-menu")?.removeAttribute("open");
+      });
+    }
+
+    updateMobileMenuLabels();
   }
 
   if (document.readyState === "loading") {

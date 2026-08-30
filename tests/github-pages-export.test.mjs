@@ -31,6 +31,8 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.doesNotMatch(html, /class="support-card-email"/);
   assert.doesNotMatch(html, /class="support-facts"/);
   assert.match(html, /data-language-toggle/);
+  assert.match(html, /class="mobile-menu"/);
+  assert.match(html, /class="mobile-nav"/);
   assert.match(html, /src="\.\/i18n\.js" defer/);
   assert.match(i18n, /Robotic strawberry harvesting module/);
   assert.match(i18n, /Support COBEQ/);
@@ -65,6 +67,8 @@ test("exports a static bilingual GitHub Pages build", async () => {
   assert.doesNotMatch(projectsHtml, /Bourses, dons et commandites confirmés/);
   assert.match(projectsHtml, /href="\.\.\/#projet"/);
   assert.match(projectsHtml, /href="\.\.\/projets"/);
+  assert.match(projectsHtml, /class="mobile-menu"/);
+  assert.match(projectsHtml, /class="mobile-nav"/);
   assert.match(projectsHtml, /src="\.\.\/i18n\.js" defer/);
   assert.match(projectsHtml, /url\(\.\.\/culture\/terrain-rangs-sous-tunnel\.jpeg\)/);
   assert.doesNotMatch(projectsHtml, /mailto:tana2102@usherbrooke\.ca\?subject=COBEQ%20-%20Publication%20projet/);

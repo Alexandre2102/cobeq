@@ -55,8 +55,10 @@ test("server-renders the bilingual COBEQ site", async () => {
   assert.match(html, /src="\/i18n\.js"/);
   assert.match(html, /FR/);
   assert.match(html, /EN/);
+  assert.match(html, /class="mobile-menu"/);
+  assert.match(html, /class="mobile-nav"/);
   assert.match(html, /https:\/\/www\.instagram\.com\/cobeq\.ca\//);
-  assert.equal((html.match(/src="\/brand\/instagram-couleur\.png"/g) ?? []).length, 4);
+  assert.equal((html.match(/src="\/brand\/instagram-couleur\.png"/g) ?? []).length, 5);
   assert.doesNotMatch(html, />Suivre COBEQ sur Instagram</);
   assert.match(html, /Goutti.re suspendue/);
   assert.match(html, /Fruit fragile/);
@@ -105,6 +107,10 @@ test("keeps translation and support guide details available", async () => {
   assert.doesNotMatch(page, /SARIC/);
   assert.match(css, /\.footer-instagram/);
   assert.match(css, /\.nav-links \.nav-instagram/);
+  assert.match(css, /\.mobile-menu/);
+  assert.match(css, /\.mobile-nav/);
+  assert.match(css, /@media \(max-width: 760px\)/);
+  assert.match(css, /\.nav-links\s*\{[^}]*display:\s*none/s);
   assert.match(css, /\.portrait-frame-pending/);
   assert.match(css, /\.support-tooltip/);
   assert.match(css, /\.support-info\s*\{[^}]*display:\s*contents/s);
@@ -117,6 +123,7 @@ test("keeps translation and support guide details available", async () => {
   assert.match(css, /terrain-detail-pedoncule\.jpeg/);
   assert.doesNotMatch(css, /(?:rang-hors-sol-detail|tunnel-hors-sol|tunnel-rendement|fraise-proche-pedoncule)\.(?:jpg|png)/);
   assert.match(css, /grid-template-columns:\s*repeat\(5, minmax\(0, 1fr\)\)/);
+  assert.doesNotMatch(css, /font-size:\s*0\.56rem/);
   assert.match(css, /@media \(min-width: 921px\) and \(max-width: 1180px\)/);
   assert.match(css, /flex-wrap:\s*nowrap/);
   assert.match(css, /flex:\s*0 0 34px/);
@@ -156,5 +163,7 @@ test("server-renders the projects and accomplishments page", async () => {
   assert.doesNotMatch(html, /class="update-card/);
   assert.doesNotMatch(html, /class="announcement-/);
   assert.match(html, /data-language-toggle/);
+  assert.match(html, /class="mobile-menu"/);
+  assert.match(html, /class="mobile-nav"/);
   assert.match(html, /src="\/i18n\.js"/);
 });

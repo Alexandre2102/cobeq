@@ -62,6 +62,26 @@ export default function ProjectsPage() {
             <img src="/brand/instagram-couleur.png" alt="" />
           </a>
         </nav>
+        <details className="mobile-menu">
+          <summary aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </summary>
+          <nav className="mobile-nav" aria-label="Sections du site mobile">
+            <a href="/#projet">Projet</a>
+            <a href="/projets" aria-current="page">Journal</a>
+            <a href="/#objectifs">Objectifs</a>
+            <a href="/#udes">UDS</a>
+            <a href="/#demarche">Démarche</a>
+            <a href="/#equipe">Équipe</a>
+            <a href="/#contribuer">Contribuer</a>
+            <a href="/#megageniale">Méga GÉNIALE</a>
+            <a className="mobile-nav-instagram instagram-icon-link" href="https://www.instagram.com/cobeq.ca/" target="_blank" rel="noreferrer" aria-label="Instagram COBEQ">
+              <img src="/brand/instagram-couleur.png" alt="" />
+            </a>
+          </nav>
+        </details>
       </header>
 
       <section className="projects-hero projects-hero-placeholder">
