@@ -3019,58 +3019,35 @@ html[data-lang="en"] .support-card:nth-child(2)::before {
   }
 
   .mobile-menu summary {
-    position: relative;
     display: grid;
     place-items: center;
-    gap: 5px;
-    width: 44px;
-    height: 44px;
+    gap: 4px;
+    width: 42px;
+    height: 42px;
     padding: 0;
     list-style: none;
     cursor: pointer;
-    border: 2px solid rgba(0, 107, 57, 0.26);
-    border-radius: 999px;
-    background: linear-gradient(145deg, #ffffff 0%, #f6ffd6 100%);
-    box-shadow: 0 12px 26px rgba(23, 33, 27, 0.14);
+    border: 1px solid rgba(16, 32, 24, 0.14);
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: none;
   }
 
   .mobile-menu summary::-webkit-details-marker {
     display: none;
   }
 
-  .mobile-menu summary::after {
-    content: "";
-    position: absolute;
-    right: 7px;
-    bottom: 7px;
-    width: 7px;
-    height: 7px;
-    border-radius: 999px;
-    background: var(--red);
-    box-shadow: 0 0 0 2px #ffffff;
-  }
-
   .mobile-menu summary span {
-    width: 19px;
+    width: 20px;
     height: 2px;
     border-radius: 999px;
-    background: var(--green-dark);
+    background: #102018;
     transition: transform 0.16s ease, opacity 0.16s ease;
   }
 
   .mobile-menu[open] summary {
-    border-color: var(--green);
-    background: var(--green);
-    box-shadow: 0 14px 28px rgba(0, 107, 57, 0.22);
-  }
-
-  .mobile-menu[open] summary::after {
-    background: var(--red);
-    box-shadow: 0 0 0 2px var(--green);
-  }
-
-  .mobile-menu[open] summary span {
-    background: #ffffff;
+    border-color: rgba(0, 107, 57, 0.28);
+    background: rgba(0, 107, 57, 0.06);
   }
 
   .mobile-menu[open] summary span:nth-child(1) {
