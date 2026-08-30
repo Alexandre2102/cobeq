@@ -110,6 +110,8 @@ test("keeps translation and support guide details available", async () => {
   assert.match(css, /\.mobile-menu/);
   assert.match(css, /\.mobile-nav/);
   assert.match(css, /@media \(max-width: 760px\)/);
+  assert.match(css, /@media \(max-width: 920px\)\s*\{[^@]*\.topbar\s*\{[^}]*flex-direction:\s*row/s);
+  assert.match(css, /@media \(max-width: 920px\)\s*\{[^@]*\.nav-links\s*\{[^}]*display:\s*none/s);
   assert.match(css, /\.nav-links\s*\{[^}]*display:\s*none/s);
   assert.match(css, /\.portrait-frame-pending/);
   assert.match(css, /\.support-tooltip/);

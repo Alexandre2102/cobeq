@@ -2958,7 +2958,7 @@ html[data-lang="en"] .support-card:nth-child(2)::before {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 920px) {
   .topbar {
     flex-direction: row;
     align-items: center;
